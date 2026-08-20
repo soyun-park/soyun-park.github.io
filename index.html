@@ -29,15 +29,23 @@
   }
   .wrap { max-width: 640px; margin: 0 auto; padding: 56px 24px 64px; }
 
-  .portrait {
-    width: 170px;
-    height: 204px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 2px;
-    border: 1px solid var(--hairline);
-    margin-bottom: 24px;
-  }
+  ..portrait {
+  width: 170px;
+  height: 204px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 2px;
+  border: 1px solid var(--hairline);
+  flex-shrink: 0;
+}
+.header-grid {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+@media (max-width: 520px) {
+  .header-grid { flex-direction: column; }
+}
   h1 {
     font-family: "Newsreader", serif;
     font-weight: 600;
@@ -79,7 +87,14 @@
 <body>
 <div class="wrap">
 
+<div class="header-grid">
   <img class="portrait" src="photo.jpg" alt="So Yun Park" onerror="this.style.display='none'">
+  <div>
+    <h1>So Yun Park</h1>
+    <div class="affil">PhD Candidate, University of Wisconsin-Madison, Department of Sociology</div>
+    <div class="email">email: <a href="mailto:spark553@wisc.edu">spark553@wisc.edu</a></div>
+  </div>
+</div>
 
   <h1>So Yun Park</h1>
   <div class="affil">PhD Candidate, University of Wisconsin-Madison, Department of Sociology</div>
